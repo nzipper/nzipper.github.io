@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Blog Post</title>
+  <link href="css/styles.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <style>
+    /* Ensure navbar is flush with the top */
+    body {
+      margin: 0 !important;
+      padding: 0 !important;
+      background: #fff;
+      width: 100vw;
+      overflow-x: hidden;
+    }
+    nav.navbar {
+      margin: 0 !important;
+      padding: 0 !important;
+      border-radius: 0;
+    }
+    /* Add horizontal padding to navbar links */
+    .navbar-nav .nav-link {
+      padding-left: 1rem !important;
+      padding-right: 1rem !important;
+    }
+
+    .navbar-brand {
+      padding: 0.5rem 1rem 0.5rem 2rem !important;
+      display: flex;
+      align-items: center;
+    }
+
+    /* Add padding to the markdown content container */
+    main.container {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start; /* or center for vertical centering */
+      margin-left: 0 !important;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+      max-width: 100vw;
+    }
+    #post-content {
+      padding: 2rem 1.5rem 2rem 1.5rem;
+      background: var(--bs-body-bg, #fff);
+      border-radius: 0.5rem;
+      /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03); */
+      max-width: 900px;
+      width: 100%;
+      color: var(--bs-body-color, #212529);
+    }
+    @media (max-width: 600px) {
+      #post-content {
+        padding: 1rem 0.5rem;
+      }
+    }
+
+    /* Headings: match main site heading color and font */
+    #post-content h1,
+    #post-content h2,
+    #post-content h3,
+    #post-content h4,
+    #post-content h5,
+    #post-content h6 {
+      font-family: "Saira Extra Condensed", Arial, sans-serif;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--bs-heading-color, #23272a);
+      margin-top: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    /* Specific heading sizes */
+    #post-content h1 { font-size: 2.5rem; }
+    #post-content h2 { font-size: 2rem; }
+    #post-content h3 { font-size: 1.5rem; }
+    #post-content h4 { font-size: 1.25rem; }
+    #post-content h5 { font-size: 1.1rem; }
+    #post-content h6 { font-size: 1rem; }
+
+    /* Paragraphs */
+    #post-content p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: var(--bs-body-color, #212529);
+      margin-bottom: 1rem;
+    }
+
+    /* Lists */
+    #post-content ul,
+    #post-content ol {
+      margin-left: 2rem;
+      margin-bottom: 1rem;
+      color: var(--bs-body-color, #212529);
+    }
+    #post-content li {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    /* Inline code */
+    #post-content code {
+      background: #f3f3f3;
+      color: var(--bs-code-color, #d63384);
+      padding: 0.2em 0.4em;
+      border-radius: 0.2em;
+      font-size: 0.95em;
+    }
+
+    /* Code blocks */
+    #post-content pre code {
+      display: block;
+      padding: 1em;
+      background: #23272a;
+      color: #fff;
+      border-radius: 0.5em;
+      overflow-x: auto;
+    }
+
+    /* Links */
+    #post-content a {
+      color: var(--bs-link-color, #ff985a);
+      text-decoration: underline;
+    }
+    #post-content a:hover {
+      color: var(--bs-link-hover-color, #ffb347);
+    }
+
+    /* Blockquotes */
+    #post-content blockquote {
+      border-left: 4px solid var(--bs-secondary, #ff985a);
+      margin: 1.5em 0;
+      padding: 0.5em 1em;
+      color: var(--bs-gray-700, #495057);
+      background: #f8f9fa;
+    }
+
+    /* Dark mode overrides */
+    body.dark-mode #post-content {
+      color: #e0e0e0;
+      background: #181a1b;
+    }
+    body.dark-mode #post-content h1,
+    body.dark-mode #post-content h2,
+    body.dark-mode #post-content h3,
+    body.dark-mode #post-content h4,
+    body.dark-mode #post-content h5,
+    body.dark-mode #post-content h6 {
+      color: #fff;
+    }
+    body.dark-mode #post-content p,
+    body.dark-mode #post-content ul,
+    body.dark-mode #post-content ol,
+    body.dark-mode #post-content li {
+      color: #e0e0e0;
+    }
+    body.dark-mode #post-content code {
+      background: #23272a;
+      color: #ffb347;
+    }
+    body.dark-mode #post-content pre code {
+      background: #181a1b;
+      color: #ffb347;
+    }
+    body.dark-mode #post-content a {
+      color: #ffb347;
+    }
+    body.dark-mode #post-content a:hover {
+      color: #ff985a;
+    }
+    body.dark-mode #post-content blockquote {
+      color: #b0b0b0;
+      background: #23272a;
+      border-left-color: #ffb347;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <a class="navbar-brand js-scroll-trigger" href="index.html">
+        <span class="d-block d-lg-none">Noah Zipper</span>
+        <span class="d-none d-lg-block">
+            <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="assets/img/profile.jpg" alt="..." style="height:40px;width:40px;" />
+        </span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link" href="index.html#about">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="index.html#posts">Recent Posts</a></li>
+            <li class="nav-item"><a class="nav-link" href="index.html#experience">Experience</a></li>
+            <li class="nav-item"><a class="nav-link" href="index.html#education">Education</a></li>
+            <li class="nav-item"><a class="nav-link" href="index.html#skills">Skills</a></li>
+            <li class="nav-item"><a class="nav-link" href="index.html#talks">Talks</a></li>
+            <li class="nav-item"><a class="nav-link" href="index.html#publications">Publications</a></li>
+            <li class="nav-item"><a class="nav-link" href="index.html#awards">Awards</a></li>
+            <li class="nav-item"><a class="nav-link" href="index.html#interests">Interests</a></li>
+        </ul>
+    </div>
+  </nav>
+  <main class="container mt-4">
+    <div id="post-content"></div>
+  </main>
+  <script>
+    // Get ?post=posts/deep-learning-bracket.md from URL
+    const params = new URLSearchParams(window.location.search);
+    const postPath = params.get('post');
+    if (postPath) {
+      fetch(postPath)
+        .then(res => res.text())
+        .then(md => {
+          document.getElementById('post-content').innerHTML = marked.parse(md);
+        });
+    } else {
+      document.getElementById('post-content').innerHTML = "<p>No post specified.</p>";
+    }
+  </script>
+
+  <!-- Dark Mode Toggle Button -->
+  <button
+    class="theme-switcher-grid"
+    id="toggle-dark-mode"
+    aria-label="Switch theme"
+    style="position:fixed;bottom:1.5rem;right:1.5rem;z-index:9999;"
+  >
+    <div class="sun" id="sun" aria-hidden="true"></div>
+    <div class="moon-overlay" id="moon-overlay" aria-hidden="true"></div>
+    <div class="cloud-ball cloud-ball-left" id="ball1" aria-hidden="true"></div>
+    <div class="cloud-ball cloud-ball-middle" id="ball2" aria-hidden="true"></div>
+    <div class="cloud-ball cloud-ball-right" id="ball3" aria-hidden="true"></div>
+    <div class="cloud-ball cloud-ball-top" id="ball4" aria-hidden="true"></div>
+    <div class="star" id="star1" aria-hidden="true"></div>
+    <div class="star" id="star2" aria-hidden="true"></div>
+    <div class="star" id="star3" aria-hidden="true"></div>
+    <div class="star" id="star4" aria-hidden="true"></div>
+  </button>
+  <script>
+    // Restore dark mode preference
+    const toggleBtn = document.getElementById('toggle-dark-mode');
+    if(localStorage.getItem('darkMode')) {
+        document.body.classList.add('dark-mode');
+        if (toggleBtn) toggleBtn.classList.add('night-theme');
+    }
+
+    // Set up dark mode toggle button
+    if (toggleBtn) {
+        toggleBtn.onclick = function() {
+            document.body.classList.toggle('dark-mode');
+            toggleBtn.classList.toggle('night-theme');
+            if(document.body.classList.contains('dark-mode')) {
+                localStorage.setItem('darkMode', 'true');
+            } else {
+                localStorage.removeItem('darkMode');
+            }
+        };
+    }
+  </script>
+
+</body>
+</html>

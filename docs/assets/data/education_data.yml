@@ -1,15 +1,15 @@
 education:
   - university: University of Colorado Boulder
-    degree: Ph.D.
-    major: Experimental High-Energy Particle Physics
+    degree: Ph.D., Experimental High-Energy Physics
+    major: 
     date_range: May 2022 - August 2025
   - university: University of Colorado Boulder
-    degree: M.S.
-    major: Experimental High-Energy Particle Physics
+    degree: M.S., Experimental High-Energy Physics
+    major: 
     date_range: September 2019 - May 2022
   - university: University of Michigan Ann Arbor
-    degree: B.S.
-    major: Physics
+    degree: B.S., Physics
+    major:
     date_range: September 2014 - December 2018
   - university: John Jay High School
     degree: High School Diploma

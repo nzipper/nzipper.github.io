@@ -3,17 +3,17 @@
   image: "assets/img/march_madness.webp"
   path: "posts/deep-learning-bracket.md"
 
-- title: "Another Blog Post"
-  description: "Short description for another post."
-  image: "assets/img/another_image.jpg"
-  path: "posts/another-post.md"
+# - title: Another Blog Post 1
+#   description: Short description for another post.
+#   image: assets/img/example.jpg
+#   path: posts/example.md
 
-- title: "Another Blog Post"
-  description: "Short description for another post."
-  image: "assets/img/another_image.jpg"
-  path: "posts/another-post.md"
+# - title: "Another Blog Post"
+#   description: "Short description for another post."
+#   image: "assets/img/another_image.jpg"
+#   path: "posts/another-post.md"
 
-- title: "Another Blog Post"
-  description: "Short description for another post."
-  image: "assets/img/another_image.jpg"
-  path: "posts/another-post.md"
+# - title: "Another Blog Post"
+#   description: "Short description for another post."
+#   image: "assets/img/another_image.jpg"
+#   path: "posts/another-post.md"

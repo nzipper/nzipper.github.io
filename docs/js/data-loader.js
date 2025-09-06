@@ -224,11 +224,25 @@ function loadPosts() {
                 card.style.width = '500px';
                 card.style.height = '300px';
                 card.style.cursor = 'pointer';
-                card.onclick = () => window.location.href = post.path;
+                // card.onclick = () => window.location.href = post.path;
+                card.onclick = () => window.location.href = `post_template.html?post=${encodeURIComponent(post.path)}`;
 
                 // Card inner HTML with flip animation
                 card.innerHTML = `
-                    <img class="card__image" src="${post.image}" alt="${post.title}" />
+                    <div class="card-image-wrapper" style="height: 100%; width: 100%; overflow: hidden; background: rgb(0, 0, 0); position: relative;">
+                        <img class="card__image" src="${post.image}" alt="${post.title}"
+                            style="
+                                position: absolute;
+                                top: -10%;
+                                left: 50%;
+                                transform: translateX(-50%);
+                                height: 120%;
+                                width: auto;
+                                object-fit: cover;
+                                display: block;
+                            "
+                        />
+                    </div>
                     <div class="card__content">
                         <p class="card__title">${post.title}</p>
                         <p class="card__description">${post.description}</p>
@@ -266,19 +280,40 @@ function loadTalks() {
             talks.forEach(talk => {
                 const card = document.createElement('div');
                 card.className = 'card m-2';
-                card.style.flex = '1 1 calc(60% - 1rem)';
-                card.style.height = '400px';
+                card.style.flex = '1 1 calc(100% - 1rem)';
+                card.style.height = '300px';
                 card.style.cursor = 'pointer';
                 card.onclick = () => window.open(talk.url, '_blank');
 
                 card.innerHTML = `
-                    <div class="card-image-wrapper" style="height: 100%; width: 100%; overflow: hidden; background:rgb(0, 0, 0); display: flex; align-items: center; justify-content: center;">
-                        <img class="card__image" src="${talk.image}" alt="${talk.title}" style="height: 100%; width: auto; object-fit: cover; display: block;" />
+                    <div class="card-image-wrapper" style="height: 100%; width: 100%; overflow: hidden; background: rgb(0, 0, 0); position: relative;">
+                        <img class="card__image" src="${talk.image}" alt="${talk.title}"
+                            style="
+                                position: absolute;
+                                top: -20%;
+                                left: 50%;
+                                transform: translateX(-50%);
+                                height: 140%;
+                                width: auto;
+                                object-fit: cover;
+                                display: block;
+                            "
+                        />
                     </div>
-                    <div class="card__content" style="position: absolute; bottom: 0; left: 0; width: 100%; background: rgba(255,255,255,0.9);">
+                    <div class="card__content" style="position: absolute; bottom: 0; left: 0; width: 100%; padding-bottom: 1.5em;">
                         <p class="card__title">${talk.title}</p>
                         <p class="card__description">${talk.conference}</p>
                         <p class="card__description"><strong>${talk.date}</strong></p>
+                        <span class="card__material-hint" style="
+                            position: absolute;
+                            right: 0.75em;
+                            bottom: 0.5em;
+                            font-size: 1.2em;
+                            font-weight: bold;
+                            color: var(--bs-link-color, #ff985a);
+                            opacity: 0.8;
+                            pointer-events: none;
+                        ">click for material</span>
                     </div>
                 `;
                 card.style.position = "relative";
@@ -291,26 +326,41 @@ function loadTalks() {
 
 //------------------------------------------------------------------------------------------------------------------------------------------------
 // Main loader function that calls all the section-specific loaders
-function loadAllSections() {
+document.addEventListener('DOMContentLoaded', () => {
+    // Restore dark mode preference before anything else
+    const toggleBtn = document.getElementById('toggle-dark-mode');
+    if(localStorage.getItem('darkMode')) {
+        document.body.classList.add('dark-mode');
+        if (toggleBtn) toggleBtn.classList.add('night-theme');
+    }
+
+    // Set up dark mode toggle button
+    if (toggleBtn) {
+        toggleBtn.onclick = function() {
+            document.body.classList.toggle('dark-mode');
+            toggleBtn.classList.toggle('night-theme');
+            if(document.body.classList.contains('dark-mode')) {
+                localStorage.setItem('darkMode', 'true');
+            } else {
+                localStorage.removeItem('darkMode');
+            }
+        };
+    }
+
+    // Load all dynamic sections
     loadExperience();
     loadEducation();
     loadPublications();
     loadPosts();
     loadTalks();
 
+    // Inject SVGs
+    SvgInjector.processAll();
+
     // Re-run MathJax after all content is added
-    // Use a small delay to ensure all content is rendered before MathJax processes it.
     setTimeout(() => {
         if (window.MathJax) {
             MathJax.typeset();
         }
     }, 250);
-}
-
-// Trigger the main loader function when the entire window is loaded
-window.onload = loadAllSections;
-
-// Automatically run after DOM loads
-document.addEventListener('DOMContentLoaded', () => {
-    SvgInjector.processAll();
 });
