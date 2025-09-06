@@ -1,0 +1,23 @@
+- title: Real-Time Anomaly Detection in the CMS Experiment
+  conference: Fast Machine Learning for Science Conference 2024, West Lafayette, Indiana, USA
+  date: October 2024
+  url: assets/docs/FASTML_2024_Talk_Noah_zipper.pdf
+  image: assets/img/fastml_group.png
+
+- title: Precision Flavor Measurements and Real-Time Anomaly Detection at the CMS Detector
+  conference: APS 4 Corners Section Meeting 2024, Flagstaff, Arizona, USA
+  date: October 2024
+  url: assets/docs/LUSTIG_Talk_Noah_Zipper_2024.pdf
+  image: assets/img/lustig_talk.jpeg
+
+- title: Testing a Neural Network for Anomaly Detection in the CMS Global Trigger Test Crate during Run 3
+  conference: Topical Workshop on Electronics for Particle Physics 2023, Geremeas, Sardinia, Italy
+  date: October 2023
+  url: https://cds.cern.ch/record/2883618
+  image: assets/img/twepp.jpg
+
+- title: Search for Electroweak SUSY in Hadronic Final States with the CMS Detector
+  conference: The XXIX International Conference on Supersymmetry and Unification of Fundamental Interactions, University of Ioannina, Ioannina, Greece
+  date: June 2022
+  url: assets/docs/SUSY2022_Noah_Zipper_Talk.pdf
+  image: assets/img/susy.jpg

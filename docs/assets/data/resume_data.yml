@@ -1,0 +1,84 @@
+entries:
+  - employer: University of Colorado Boulder
+    job_title: Postdoctoral Researcher
+    date_range: May 2025 - Present
+    bullet_points:
+      - > 
+        Developed MLOps CI/CD pipelines for automated training, hardware deployment,
+        and monitoring of ML models in high-throughput physics environments, leading to
+        faster deployments and robust model improvement metrics
+      - >
+        Guided research projects and mentored multiple junior graduate and undergraduate
+        students
+    skills:
+      # - Physics
+      # - Data Analysis
+      # - C++
+      # - Python
+
+  - employer: University of Colorado Boulder
+    job_title: Graduate Researcher
+    date_range: June 2019 - May 2025
+    bullet_points:
+      - > 
+        Built unsupervised deep learning anomaly detection algorithms for streaming data
+        on FPGAs to achieve nanosecond latency in event selection
+      - >
+        Developed particle tracking algorithms in Vivado HLS for microsecond-speed hardware
+        reconstruction and used ML-driven multivariate classification and likelihood fits to
+        measure particle identification efficiencies, enabling high-precision tests of
+        fundamental theories for rare B particle decays
+      - >
+        Designed scalable data acquisition system for future hardware upgrades, aimed at 100%
+        rejection kHz-scale stream of background noise while preserving rare signal processes
+      - >
+        Collaborated with $\mathcal{O}$(100) researchers across US, Europe, and Asia in a
+        fast-paced, results-driven environment, leading weekly data-driven discussions,
+        presenting technical updates, and contributing to high-impact decision-making on
+        large-scale projects
+    skills:
+      # - Physics
+      # - Data Analysis
+      # - C++
+      # - Python
+
+  - employer: University of Michigan Ann Arbor
+    job_title: Physics Research Assistant
+    date_range: October 2015 - December 2018
+    bullet_points:
+      - >
+        As an Undergraduate Researcher at the University of Michigan, I focused on advancing the
+        performance of FPGA circuits and optimizing algorithms for particle detection. My
+        responsibilities included conducting thermal tests for muon spectrometer electronics and
+        refining the isolation scale factor algorithm to improve photon identification. This role
+        allowed me to develop critical skills in VHDL programming and thermal analysis.
+    skills:
+      # - VHDL
+      # - FPGA
+      # - Data Analysis
+
+  - employer: Lawrence Livermore National Laboratory
+    job_title: Research Scholar
+    date_range: June 2018 - August 2018
+    bullet_points:
+      - >
+        At Lawrence Livermore National Laboratory, I focused on advanced modeling techniques to
+        enhance photon temperature estimation and diagnostics. My work involved developing Bayesian
+        estimation and Markov Chain Monte Carlo models in MATLAB, alongside analyzing X-ray spectra
+        from relativistic electron plasmas to improve understanding of photon energy distributions
+        in laser wakefield acceleration experiments.
+    skills: 
+      # - MATLAB
+      # - X-Ray Spectroscopy
+
+  - employer: CERN
+    job_title: Research Intern
+    date_range: January 2018 - April 2018
+    bullet_points:
+      - >
+        During my internship at CERN, I played a pivotal role in analyzing the associate top quark
+        pair production of the Higgs Boson. I handled extensive data sets, utilizing C++ and Python
+        to process both real data and Monte Carlo simulations. My work involved applying statistical
+        analysis and machine learning techniques to minimize background uncertainties, ultimately
+        improving the accuracy of Higgs Boson signal measurements.
+    skills: []

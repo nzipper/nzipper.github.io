@@ -2,9 +2,10 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
+        <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /> -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Noah Zipper's Personal website" />
+        <meta name="author" content="Noah Zipper" />
         <title>Noah Zipper's Site</title>
         <link rel="icon" type="image/x-icon" href="assets/img/nucleus.svg" />
         <!-- Font Awesome icons (free version)-->
@@ -17,6 +18,36 @@
         <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
+
+        <!-- YAML parser -->
+        <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
+
+        <!-- MathJax -->
+        <script>
+            window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            }
+            };
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+        <!-- BibTeX parser -->
+        <!-- <script src="https://cdn.jsdelivr.net/npm/bibtex-parser-js@0.0.2/bibtexParse.min.js"></script> -->
+
+        <!-- Citation.js -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/citation-js/0.7.20/citation.min.js"></script>
+        <script>
+            // Expose Cite globally after the script loads
+            window.Cite = require('citation-js');
+        </script>
+
+        <!-- Devicon for skill icons -->
+        <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+        
+        <!-- Data loader -->
+        <script src="js/data-loader.js"></script>
     </head>
     <body id="page-top">
         <!-- Navigation-->
@@ -29,6 +60,7 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav">
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#posts">Recent Posts</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#experience">Experience</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#education">Education</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#skills">Skills</a></li>
@@ -41,6 +73,8 @@
         </nav>
         <!-- Page Content-->
         <div class="container-fluid p-0">
+
+
             <!-- About-->
             <section class="resume-section" id="about">
                 <div class="resume-section-content">
@@ -51,10 +85,13 @@
                         <a href="mailto:noahzipper@gmail.com">noahzipper@gmail.com</a>
                     </div>
                     <p class="lead mb-5">
-                        I'm a PhD candidate working on the CMS experiment. With over 5 years of experience in high-energy particle physics, I've specialized in analyzing big, complex datasets while developing and implementing hardware and software to improve the experiment.
+                        Postdoctoral Researcher working on Large Hadron Collider experiments.<br>
+                        Focus on fast machine learning, data pipeline automation, and statistical analysis.
                     </p>
                     <div class="social-icons">
-                        <a class="social-icon" href="assets/docs/noah_zipper_resume_7_13_25.pdf"><i class="fa-solid fa-file"></i></a>
+                        <a class="social-icon" href="assets/docs/resume_master.pdf" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-solid fa-file"></i>
+                        </a>
                         <a class="social-icon" href="https://github.com/nzipper"><i class="fab fa-github"></i></a>
                         <a class="social-icon" href="https://gitlab.cern.ch/nzipper"><i class="fab fa-gitlab"></i></a>
                         <a class="social-icon" href="https://www.linkedin.com/in/noah-zipper-034a14147/"><i class="fab fa-linkedin-in"></i></a>
@@ -64,145 +101,112 @@
                 </div>
             </section>
             <hr class="m-0" />
+
+            <!-- Posts-->
+            <section class="resume-section" id="posts">
+                <div class="resume-section-content">
+                    <h2 class="mb-5 mt-0">Recent Posts</h2>
+                          <div id="blog-cards" class="d-flex flex-wrap justify-content-start"></div>
+                </div>
+            </section>
+            <hr class="m-0" />
+
+
             <!-- Experience-->
             <section class="resume-section" id="experience">
                 <div class="resume-section-content">
                     <h2 class="mb-5">Experience</h2>
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-0">Phd Candidate</h3>
-                            <div class="subheading mb-3">University of Colorado Boulder</div>
-                            <p>Studying lepton flavor anomalies and developing Level-1 Trigger upgrades at the CMS detector.</p>
+                    <div id="experience-container">
                         </div>
-                        <div class="flex-shrink-0"><span class="text-secondary">June 2019 - Present</span></div>
-                    </div>
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-0">Undergraduate Researcher</h3>
-                            <div class="subheading mb-3">University of Michigan Ann Arbor</div>
-                            <p>Validated FPGA signal performance circuits using VHDL for upgrades to ATLAS muon spectrometer. Performed thermal testing for detector cooling enclosures. Contributed to ATLAS analysis of associate top quark production of the Higgs Boson. Improved isolation scale factors to optimize photon identification in EM calorimeter. </p>
-                        </div>
-                        <div class="flex-shrink-0"><span class="text-secondary">October 2015 - December 2018</span></div>
-                    </div>
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-0">Summer Research Intern</h3>
-                            <div class="subheading mb-3">Lawrence Livermore National Laboratory</div>
-                            <p>Analyzed X-Ray spectra of relativistic electron plasmas to study laser wakefield accelerators. Used MATLAB to build models for calculating photon temperatures. Received student travel grant to present at 2018 APS DPP conference in Portland, Oregon.</p>
-                        </div>
-                        <div class="flex-shrink-0"><span class="text-secondary">June 2018 - August 2018</span></div>
-                    </div>
-                    <div class="d-flex flex-column flex-md-row justify-content-between">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-0">High School Research Student</h3>
-                            <div class="subheading mb-3">Columbia University</div>
-                            <p>Studied elliptic flow in heavy ion collisions at the Relativistic Heavy Ion Collider at Brookhaven National Laboratory.</p>
-                        </div>
-                        <div class="flex-shrink-0"><span class="text-secondary">September 2009 - June 2010</span></div>
-                    </div>
                 </div>
             </section>
             <hr class="m-0" />
+
+
             <!-- Education-->
             <section class="resume-section" id="education">
                 <div class="resume-section-content">
                     <h2 class="mb-5">Education</h2>
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-0">University of Colorado Boulder</h3>
-                            <div class="subheading mb-3">Master of Science</div>
-                            <div>High-Energy Physics</div>
-                            <!-- <p>GPA: 3.77</p> -->
+                    <div id="education-container">
                         </div>
-                        <div class="flex-shrink-0"><span class="text-secondary">September 2019 - May 2022</span></div>
-                    </div>
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-0">University of Michigan Ann Arbor</h3>
-                            <div class="subheading mb-3">Bachelor of Science</div>
-                            <div>Physics</div>
-                            <!-- <p>GPA: 3.72</p> -->
-                        </div>
-                        <div class="flex-shrink-0"><span class="text-secondary">September 2014 - December 2018</span></div>
-                    </div>
-                    <div class="d-flex flex-column flex-md-row justify-content-between">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-0">John Jay High School</h3>
-                            <div class="subheading mb-3"></div>
-                            <!-- <p>GPA: 3.74</p> -->
-                        </div>
-                        <div class="flex-shrink-0"><span class="text-secondary">September 2010 - May 2014</span></div>
-                    </div>
                 </div>
             </section>
             <hr class="m-0" />
+
+
             <!-- Skills-->
             <section class="resume-section" id="skills">
                 <div class="resume-section-content">
                     <h2 class="mb-5">Skills</h2>
-                    <div class="subheading mb-3">Programming Languages & Operating Systems</div>
+
+                    <div class="subheading mb-3">Programming Languages</div>
                     <ul class="list-inline dev-icons">
-                        <li class="list-inline-item"><i class="fab fa-python"></i></li>
-                        <li class="list-inline-item"><i class="devicon-cplusplus-plain"></i></li>
-                        <li class="list-inline-item"><i class="devicon-matlab-plain"></i></li>
-                        <li class="list-inline-item"><i class="fab fa-linux"></i></li>
-                        <li class="list-inline-item"><i class="devicon-bash-plain"></i></li>
-                        <li class="list-inline-item"><i class="devicon-apple-original"></i></li>
+                        <li class="list-inline-item" style="text-align: center;"><i class="fab fa-python"></i><div style="margin-top: -0.5em;"><span style="font-size: 0.3em;">Python</span></div></li>
+                        <li class="list-inline-item" style="text-align: center;"><i class="devicon-cplusplus-plain"></i><div style="margin-top: -0.5em;"><span style="font-size: 0.3em;">C++</span></div></li>
+                        <li class="list-inline-item" style="text-align: center;"><i class="devicon-matlab-plain"></i><div style="margin-top: -0.5em;"><span style="font-size: 0.3em;">MATLAB</span></div></li>
+                        <li class="list-inline-item" style="text-align: center;"><i class="fas fa-database"></i><div style="margin-top: -0.5em;"><span style="font-size: 0.3em;">SQL / NoSQL</span></div></li>
+                        <li class="list-inline-item" style="text-align: center;"><i class="devicon-bash-plain"></i><div style="margin-top: -0.5em;"><span style="font-size: 0.3em;">Bash</span></div></li>
+                        <li class="list-inline-item" style="text-align: center;"><i class="devicon-latex-original"></i><div style="margin-top: -0.5em;"><span style="font-size: 0.3em;">LaTeX</span></div></li>
+                        <li class="list-inline-item" style="text-align: center;"><svg role="img" width="70" height="55" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill='currentColor' d="M15.74 10.7c-.53-1.53.14-4 .14-4S13.6 8.01 11.93 8 8.13 6.7 8.13 6.7s.56 2.46.07 4.04c-.48 1.58-2.47 3.34-2.47 3.34s2.58.23 3.85 1.1S12 18.64 12 18.64s.78-2.35 2.32-3.41c1.54-1.07 3.96-1.15 3.96-1.15s-2-1.84-2.54-3.37zm-2 3.69c-1.09.81-1.75 2.19-1.75 2.19s-.76-1.43-1.8-2.22c-1.05-.79-2.57-.97-2.57-.97a5.06 5.06 0 0 0 1.53-2.37c.46-1.54.18-2.73.18-2.73s.92.7 2.62.7c1.7 0 2.79-.7 2.79-.7s-.38 1.58.07 2.7c.44 1.14 1.57 2.41 1.57 2.41s-1.56.17-2.64.99zM13.73 9.6s-.95.38-1.77.37c-.82 0-1.7-.37-1.7-.37.05.58 0 1.15-.17 1.7-.27.86-.91 1.64-.91 1.64A4.23 4.23 0 0 1 12 14.95s.45-.85 1.18-1.33c.5-.31 1.05-.55 1.63-.7 0 0-.74-.78-1.02-1.57-.28-.78-.06-1.75-.06-1.75zM20.1 12l3.31-3.7-4.85-1.07.5-4.94-4.56 2L12 0 9.5 4.29l-4.55-2 .49 4.95L.59 8.29 3.89 12 .6 15.7l4.85 1.07-.5 4.94 4.55-2L12 24l2.5-4.29 4.56 2-.5-4.94 4.85-1.06-3.3-3.71zm-5.27 3.95C14 16.56 12 20.81 12 20.81S10.5 16.95 9 15.95c-1.48-1-5.38-1.22-5.38-1.22s2.99-2.37 3.57-4.47c.59-2.1-.37-5.37-.37-5.37s2.9 2.1 5.08 2.1c2.17 0 5.26-2.1 5.26-2.1s-.82 4.5-.53 5.46c.3.96 3.73 4.38 3.73 4.38s-4.7.62-5.54 1.22z"/></svg><div style="margin-top: -0.5em;"><span style="font-size: 0.3em;">Mathematica</span></div></li>                        
+                        <li class="list-inline-item" style="text-align: center;"><i class="fas fa-microchip"></i><div style="margin-top: -0.5em;"><span style="font-size: 0.3em;">HLS</span></div></li>
+                        <li class="list-inline-item" style="text-align: center;"><i class="fas fa-cogs"></i><div style="margin-top: -0.5em;"><span style="font-size: 0.3em;">VHDL</span></div></li>
+
+                    <div class="subheading mb-3">Machine Learning & Data Science</div>
+                    <ul class="list-inline dev-icons">
+                        <li class="list-inline-item" style="text-align: center;"><i class="devicon-tensorflow-original-wordmark"></i><div style="margin-top: -0.5em;"><span style="font-size: 0.3em;">TensorFlow</span></div></li>
+                        <li class="list-inline-item" style="text-align: center;"><i class="devicon-pytorch-plain-wordmark"></i><div style="margin-top: -0.5em;"><span style="font-size: 0.3em;">PyTorch</span></div></li>
+                        <li class="list-inline-item" style="text-align: center;"><i class="devicon-scikitlearn-plain"></i><div style="margin-top: -0.5em;"><span style="font-size: 0.3em;">scikit-learn</span></div></li>
+                        <li class="list-inline-item" style="text-align: center;"><i class="devicon-keras-plain"></i><div style="margin-top: -0.5em;"><span style="font-size: 0.3em;">Keras / QKeras</span></div></li>
+                        <li class="list-inline-item" style="text-align: center;"><i class="fas fa-tachometer-alt"></i><div style="margin-top: -0.5em;"><span style="font-size: 0.3em;">XGBoost</span></div></li>
+                        <li class="list-inline-item" style="text-align: center;"><svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill='currentColor' d="M11.883.002a12.044 12.044 0 0 0-9.326 19.463l3.668-2.694A7.573 7.573 0 0 1 12.043 4.45v2.867l6.908-5.14A12.012 12.012 0 0 0 11.883.002zm9.562 4.533L17.777 7.23a7.573 7.573 0 0 1-5.818 12.322v-2.867l-6.908 5.14a12.046 12.046 0 0 0 16.394-17.29z"/></svg></i><div style="margin-top: -0.5em;"><span style="font-size: 0.3em;">MLFlow</span></div></li>
+                        <li class="list-inline-item" style="text-align: center;"><svg role="img" width="70" height="55" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill='currentColor' d="M2.48 0a1.55 1.55 0 1 0 0 3.1 1.55 1.55 0 0 0 0-3.1zm19.04 0a1.55 1.55 0 1 0 0 3.101 1.55 1.55 0 0 0 0-3.101zM12 2.295a1.55 1.55 0 1 0 0 3.1 1.55 1.55 0 0 0 0-3.1zM2.48 5.272a2.48 2.48 0 1 0 0 4.96 2.48 2.48 0 0 0 0-4.96zm19.04 0a2.48 2.48 0 1 0 0 4.96 2.48 2.48 0 0 0 0-4.96zM12 8.496a1.55 1.55 0 1 0 0 3.1 1.55 1.55 0 0 0 0-3.1zm-9.52 3.907a1.55 1.55 0 1 0 0 3.1 1.55 1.55 0 0 0 0-3.1zm19.04 0a1.55 1.55 0 1 0 0 3.102 1.55 1.55 0 0 0 0-3.102zM12 13.767a2.48 2.48 0 1 0 0 4.962 2.48 2.48 0 0 0 0-4.962zm-9.52 3.907a2.48 2.48 0 1 0 .001 4.962 2.48 2.48 0 0 0 0-4.962zm19.04.93a1.55 1.55 0 1 0 0 3.102 1.55 1.55 0 0 0 0-3.101zM12 20.9a1.55 1.55 0 1 0 0 3.1 1.55 1.55 0 0 0 0-3.1Z"/></svg><div style="margin-top: -0.5em;"><span style="font-size: 0.3em;">Weights & Biases</span></div></li>
+                        <li class="list-inline-item" style="text-align: center;"><i class="fas fa-microchip"></i><div style="margin-top: -0.5em;"><span style="font-size: 0.3em;">hls4ml</span></div></li>
+                        <li class="list-inline-item" style="text-align: center;"><i class="devicon-numpy-plain"></i><div style="margin-top: -0.5em;"><span style="font-size: 0.3em;">NumPy</span></div></li>
+                        <li class="list-inline-item" style="text-align: center;"><i class="devicon-pandas-plain"></i><div style="margin-top: -0.5em;"><span style="font-size: 0.3em;">Pandas</span></div></li>
+                        <li class="list-inline-item" style="text-align: center;"><svg role="img" width="70" height="55" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill='currentColor' d="m11.246 9.754 5.848-3.374a.202.202 0 0 0 .1-.175l.002-2.553c0-.324-.133-.645-.392-.841a1 1 0 0 0-1.118-.074l-2.425 1.4-6.436 3.712a1.007 1.007 0 0 0-.504.872l-.003 8.721v2.825c0 .324.132.645.39.842.335.253.766.278 1.12.074l2.363-1.364a.202.202 0 0 0 .101-.175l.003-8.244a1.902 1.902 0 0 1 .951-1.646Zm10.316-4.336a1.005 1.005 0 0 0-.504-.137.997.997 0 0 0-.503.137l-8.86 5.112a1.01 1.01 0 0 0-.505.87l-.003 11.591c0 .364.188.69.503.872a.995.995 0 0 0 1.007 0l8.86-5.112a1.01 1.01 0 0 0 .504-.872l.004-11.59a.997.997 0 0 0-.503-.871ZM6.378 7.074l6.334-3.655a.202.202 0 0 0 .1-.175l.001-2.193c0-.324-.133-.646-.392-.84a1 1 0 0 0-1.118-.075L2.443 5.25a1.007 1.007 0 0 0-.504.872l-.003 11.546c0 .324.133.645.39.842a1 1 0 0 0 1.12.074l1.877-1.082a.202.202 0 0 0 .1-.175l.003-8.605c0-.68.363-1.307.952-1.647z"/></svg><div style="margin-top: -0.5em;"><span style="font-size: 0.3em;">Dask</span></div></li>
+                        <li class="list-inline-item" style="text-align: center;"><i class="devicon-apachespark-original"></i><div style="margin-top: -0.5em;"><span style="font-size: 0.3em;">Apache Spark</span></div></li>
+                        <li class="list-inline-item" style="text-align: center;"><i class="devicon-jupyter-plain-wordmark"></i><div style="margin-top: -0.5em;"><span style="font-size: 0.3em;">Jupyter</span></div></li>
+                        <li class="list-inline-item" style="text-align: center;"><i class="devicon-matplotlib-plain"></i><div style="margin-top: -0.5em;"><span style="font-size: 0.3em; display: inline-flex; flex-direction: column; line-height: 1;"><span>Matplotlib /</span><span>Seaborn</span></span></div></li>
                     </ul>
 
-                    <div class="subheading mb-3">Python Libraries</div>
+                    <div class="subheading mb-3">Development Tools & Databases</div>
                     <ul class="list-inline dev-icons">
-                        <li class="list-inline-item"><i class="devicon-numpy-original-wordmark"></i></li>
-                        <li class="list-inline-item"><i class="devicon-tensorflow-original-wordmark"></i></li>
-                        <li class="list-inline-item"><i class="devicon-pytorch-plain-wordmark"></i></li>
-                        <li class="list-inline-item"><i class="devicon-pandas-original-wordmark"></i></li>
-                        <li class="list-inline-item"><i class="devicon-jupyter-plain-wordmark"></i></li>
-                        <li class="list-inline-item"><i class="devicon-sqlite-plain-wordmark"></i></li>
+                        <li class="list-inline-item" style="text-align: center;"><i class="devicon-git-plain"></i><div style="margin-top: -0.5em;"><span style="font-size: 0.3em;">Git</span></div></li>
+                        <li class="list-inline-item" style="text-align: center;"><i class="devicon-gitlab-plain"></i><div style="margin-top: -0.5em;"><span style="font-size: 0.3em;">GitLab</span></div></li>
+                        <li class="list-inline-item" style="text-align: center;"><i class="fab fa-github"></i><div style="margin-top: -0.5em;"><span style="font-size: 0.3em;">GitHub</span></div></li>
+                        <li class="list-inline-item" style="text-align: center;"><svg role="img" width="70" height="55" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill='currentColor' d="M10.984 13.836a.5.5 0 0 1-.353-.146l-.745-.743a.5.5 0 1 1 .706-.708l.392.391 1.181-1.18a.5.5 0 0 1 .708.707l-1.535 1.533a.504.504 0 0 1-.354.146zm9.353-.147l1.534-1.532a.5.5 0 0 0-.707-.707l-1.181 1.18-.392-.391a.5.5 0 1 0-.706.708l.746.743a.497.497 0 0 0 .706-.001zM4.527 7.452l2.557-1.585A1 1 0 0 0 7.09 4.17L4.533 2.56A1 1 0 0 0 3 3.406v3.196a1.001 1.001 0 0 0 1.527.85zm2.03-2.436L4 6.602V3.406l2.557 1.61zM24 12.5c0 1.93-1.57 3.5-3.5 3.5a3.503 3.503 0 0 1-3.46-3h-2.08a3.503 3.503 0 0 1-3.46 3 3.502 3.502 0 0 1-3.46-3h-.558c-.972 0-1.85-.399-2.482-1.042V17c0 1.654 1.346 3 3 3h.04c.244-1.693 1.7-3 3.46-3 1.93 0 3.5 1.57 3.5 3.5S13.43 24 11.5 24a3.502 3.502 0 0 1-3.46-3H8c-2.206 0-4-1.794-4-4V9.899A5.008 5.008 0 0 1 0 5c0-2.757 2.243-5 5-5s5 2.243 5 5a5.005 5.005 0 0 1-4.952 4.998A2.482 2.482 0 0 0 7.482 12h.558c.244-1.693 1.7-3 3.46-3a3.502 3.502 0 0 1 3.46 3h2.08a3.503 3.503 0 0 1 3.46-3c1.93 0 3.5 1.57 3.5 3.5zm-15 8c0 1.378 1.122 2.5 2.5 2.5s2.5-1.122 2.5-2.5-1.122-2.5-2.5-2.5S9 19.122 9 20.5zM5 9c2.206 0 4-1.794 4-4S7.206 1 5 1 1 2.794 1 5s1.794 4 4 4zm9 3.5c0-1.378-1.122-2.5-2.5-2.5S9 11.122 9 12.5s1.122 2.5 2.5 2.5 2.5-1.122 2.5-2.5zm9 0c0-1.378-1.122-2.5-2.5-2.5S18 11.122 18 12.5s1.122 2.5 2.5 2.5 2.5-1.122 2.5-2.5zm-13 8a.5.5 0 1 0 1 0 .5.5 0 0 0-1 0zm2 0a.5.5 0 1 0 1 0 .5.5 0 0 0-1 0zm12 0c0 1.93-1.57 3.5-3.5 3.5a3.503 3.503 0 0 1-3.46-3.002c-.007.001-.013.005-.021.005l-.506.017h-.017a.5.5 0 0 1-.016-.999l.506-.017c.018-.002.035.006.052.007A3.503 3.503 0 0 1 20.5 17c1.93 0 3.5 1.57 3.5 3.5zm-1 0c0-1.378-1.122-2.5-2.5-2.5S18 19.122 18 20.5s1.122 2.5 2.5 2.5 2.5-1.122 2.5-2.5z"/></svg></i><div style="margin-top: -0.5em;"><span style="font-size: 0.3em; display: inline-flex; flex-direction: column; line-height: 1;"><span>Github Actions /</span><span>Gitlab CI/CD</span></span></div></li>
+                        <li class="list-inline-item" style="text-align: center;"><i class="fab fa-docker"></i><div style="margin-top: -0.5em;"><span style="font-size: 0.3em; display: inline-flex; flex-direction: column; line-height: 1;"><span>Docker /</span><span>Singularity</span></span></div></li>
+                        <li class="list-inline-item" style="text-align: center;"><i class="devicon-sqlite-plain"></i><div style="margin-top: -0.5em;"><span style="font-size: 0.3em;">SQLite</span></div></li>
+                        <li class="list-inline-item" style="text-align: center;"><i class="devicon-mongodb-plain"></i><div style="margin-top: -0.5em;"><span style="font-size: 0.3em;">MongoDB</span></div></li>
+                        <li class="list-inline-item" style="text-align: center;"><i class="devicon-mysql-plain"></i><div style="margin-top: -0.5em;"><span style="font-size: 0.3em;">MySQL</span></div></li>
+                        <li class="list-inline-item" style="text-align: center;"><i class="devicon-jira-plain"></i><div style="margin-top: -0.5em;"><span style="font-size: 0.3em;">Jira</span></div></li>
+                        <li class="list-inline-item" style="text-align: center;"><i class="fab fa-stack-overflow"></i><div style="margin-top: -0.5em;"><span style="font-size: 0.3em;">Stack Overflow</span></div></li>
+                    </ul>
+                    
+                    <div class="subheading mb-3">Operating Systems</div>
+                    <ul class="list-inline dev-icons">
+                        <li class="list-inline-item" style="text-align: center;"><i class="fab fa-linux"></i><div style="margin-top: -0.5em;"><span style="font-size: 0.3em;">Linux</span></div></li>
+                        <li class="list-inline-item" style="text-align: center;"><i class="devicon-apple-original"></i><div style="margin-top: -0.5em;"><span style="font-size: 0.3em;">macOS</span></div></li>
                     </ul>
 
-                    <div class="subheading mb-3">Other Tools</div>
+                    <div class="subheading mb-3">Web Development</div>
                     <ul class="list-inline dev-icons">
-                        <li class="list-inline-item"><i class="devicon-git-plain"></i></li>
-                        <li class="list-inline-item"><i class="fab fa-docker"></i></li>
-                        <li class="list-inline-item"><i class="fab fa-stack-overflow"></i></li>
-                        <li class="list-inline-item"><i class="devicon-latex-original"></i></li>
-                    </ul>
-
-                    <div class="subheading mb-3">Familiar With</div>
-                    <ul class="list-inline dev-icons">
-                        <li class="list-inline-item"><i class="devicon-html5-plain"></i></li>
-                        <li class="list-inline-item"><i class="devicon-css3-plain"></i></li>
-                        <li class="list-inline-item"><i class="devicon-bootstrap-plain"></i></li>
-                        <li class="list-inline-item"><i class="devicon-illustrator-plain"></i></li>
+                        <li class="list-inline-item" style="text-align: center;"><i class="devicon-html5-plain"></i><div style="margin-top: -0.5em;"><span style="font-size: 0.3em;">HTML5</span></div></li>
+                        <li class="list-inline-item" style="text-align: center;"><i class="devicon-css3-plain"></i><div style="margin-top: -0.5em;"><span style="font-size: 0.3em;">CSS3</span></div></li>
+                        <li class="list-inline-item" style="text-align: center;"><i class="devicon-bootstrap-plain"></i><div style="margin-top: -0.5em;"><span style="font-size: 0.3em;">Bootstrap</span></div></li>
                     </ul>
 
                 </div>
-                    <!-- <div class="subheading mb-3">Workflow</div>
-                        <ul class="fa-ul mb-0">
-                            <li>
-                                <span class="fa-li"><i class="fas fa-check"></i></span>
-                                Mobile-First, Responsive Design
-                            </li>
-                            <li>
-                                <span class="fa-li"><i class="fas fa-check"></i></span>
-                                Cross Browser Testing & Debugging
-                            </li>
-                            <li>
-                                <span class="fa-li"><i class="fas fa-check"></i></span>
-                                Cross Functional Teams
-                            </li>
-                            <li>
-                                <span class="fa-li"><i class="fas fa-check"></i></span>
-                                Agile Development & Scrum
-                            </li> -->
-
             </section>
             <hr class="m-0" />
+            
+
             <!-- Talks-->
             <section class="resume-section" id="talks">
                 <div class="resume-section-content">
-                    <h2 class="mb-5">Talks & Presentations</h2>
-                    <ul class="list-unstyled">
+                    <h2 class="mb-5">Selected Public Talks</h2>
+                        <div id="talks-cards" class="d-flex flex-wrap justify-content-start"></div>
+                    <!-- <ul class="list-unstyled">
                         <li class="d-flex align-items-center">
                             <div class="w-50 shadow-1-strong rounded mb-4">
                                 <img src="assets/img/fastml_group.png" class="w-100 rounded" alt="TWEPP talk" /> 
@@ -247,40 +251,23 @@
                         <li> 
                             <p>N. Zipper, <em>Search for Electroweak SUSY in Hadronic Final States with the CMS Detector</em>, The XXIX International Conference on Supersymmetry and Unification of Fundamental Interactions, University of Ioannina, Ioannina, Greece, June 2022.</p>
                         </li>
-                    </ul>
+                    </ul> -->
                 </div>
             </section>
             <hr class="m-0" />
+
+
             <!-- Publications-->
             <section class="resume-section" id="publications">
                 <div class="resume-section-content">
                     <h2 class="mb-5">Selected Publications</h2>
-                    
-                    <!-- Begin input area for \bibitem formatted entries -->
-                    <!-- Please replace the content within the <ul> tag with your \bibitem formatted entries -->
-                    <ul class="list-unstyled">
-                        <li>
-                            A. Tumasyan et al. [CMS Collaboration], "Search for higgsinos decaying to two Higgs bosons and missing transverse momentum in proton-proton collisions at &#8730s = 13 TeV," JHEP <strong>2022</strong>, 14 (2022) [<a href="https://arxiv.org/abs/2201.04206">arXiv:2201.04206 [hep-ex]</a>].</p>
-                        </li>
-                        <li>
-                            CMS and ATLAS Collaborations, "Snowmass White Paper Contribution: Physics with the Phase-2 ATLAS and CMS Detectors," CERN Report, CMS-PAS-FTR-22-001, ATL-PHYS-PUB-2022-018 (<strong>2022</strong>). [<a href="https://cds.cern.ch/record/2806962">https://cds.cern.ch/record/2806962</a>]</p>
-                        </li>
-                        <li>
-                            A. Tumasyan et al. [CMS Collaboration], "Search for electroweak production of charginos and neutralinos at &#8730s = 13 TeV in final states containing hadronic decays of WW, WZ, or WH and missing transverse momentum," Phys. Lett. B <strong>842</strong>, 137460 (2023), [<a href="https://arxiv.org/abs/2205.09597">arXiv:2205.09597 [hep-ex]</a>].</p>
-                        </li>
-                        <li>
-                            CMS Collaboration, "Combined search for electroweak production of winos, binos, higgsinos, and sleptons in proton-proton collisions at &#8730s = 13 TeV," CMS-PAS-SUS-21-008 (<strong>2023</strong>), [<a href="https://cds.cern.ch/record/2853345">https://cds.cern.ch/record/2853345</a>].</p>
-                        </li>
-                        <li>
-                            A. Tumasyan et al. [CMS Collaboration], "Anomaly Detection in the CMS Global Trigger Test Crate for Run 3," CMS Detector Performance Summary (<strong>2023</strong>), [<a href="https://cds.cern.ch/record/2876546">https://cds.cern.ch/record/2876546</a>].</p>
-                        </li>
-                        <!-- Add more <li> items for additional publications -->
-                    </ul>
-                    <!-- End input area for \bibitem formatted entries -->
-            
+                    <div id="publications-container">
+                        </div>
                 </div>
             </section>
             <hr class="m-0" />
+
+
             <!-- Awards-->
             <section class="resume-section" id="awards">
                 <div class="resume-section-content">
@@ -310,6 +297,8 @@
                 </div>
             </section>
             <hr class="m-0" />
+
+
             <!-- Interests-->
             <section class="resume-section" id="interests">
                 <div class="resume-section-content">
@@ -359,7 +348,7 @@
                             alt="Saxophone Concert"
                         />
                         </div>
-                        <div class="col-lg-112 mb-5 mb-lg-0">
+                        <div class="col-lg-12 mb-5 mb-lg-0">
                             <img
                             src="assets/img/pano.jpg"
                             class="w-100 shadow-1-strong rounded mb-4"
@@ -386,7 +375,6 @@
         </div> 
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
     </body>
 </html>

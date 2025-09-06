@@ -1,0 +1,19 @@
+- title: "Deep Learning Bracket Building"
+  description: "Leveraged deep learning and time-series analysis to build a predictive model for NCAA basketball tournament outcomes."
+  image: "assets/img/march_madness.webp"
+  path: "posts/deep-learning-bracket.md"
+
+- title: "Another Blog Post"
+  description: "Short description for another post."
+  image: "assets/img/another_image.jpg"
+  path: "posts/another-post.md"
+
+- title: "Another Blog Post"
+  description: "Short description for another post."
+  image: "assets/img/another_image.jpg"
+  path: "posts/another-post.md"
+
+- title: "Another Blog Post"
+  description: "Short description for another post."
+  image: "assets/img/another_image.jpg"
+  path: "posts/another-post.md"
